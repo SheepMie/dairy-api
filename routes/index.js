@@ -10,7 +10,7 @@ module.exports = function(app) {
         next();
     });
     app.use('/auth', require('./auth/index'));
-    //app.use('/user', require('./user/index'));
+    app.use('/user', require('./user/index'));
 
     //app.use('/article', require('./article/index'));
 

@@ -5,12 +5,12 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-//mongoose.connect('mongodb://localhost/dairy');
-var db = mongoose.connect('mongodb://localhost:27017/SheepDairy');  //链接数据库
-db.connection.on("error", function(error) {
+//mongoose.connect('mongodb://localhost/dairy');  <4.11.0
+var db = mongoose.connection.openUri('mongodb://localhost:27017/SheepDairy');  
+db.on("error", function(error) {
     console.log("数据库连接失败：" + error);
 });
-db.connection.on("open", function() {
+db.on("open", function() {
     console.log("------数据库连接成功！------");    //数据模板创建用Schema模块去创建 
 });
 

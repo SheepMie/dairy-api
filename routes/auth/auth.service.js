@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var passport = require('passport');
 var jwt = require('jsonwebtoken');
-var config = require('../../config/default');
+var config = require('../../config');
 var User = mongoose.model('User');
 
 var  signToken = function(id) {
